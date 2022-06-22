@@ -1,7 +1,9 @@
 package com.nipun.ecom.orderservice.dto;
 
-import lombok.*;
-import org.springframework.validation.annotation.Validated;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.NotEmpty;
 import java.util.List;
@@ -14,10 +16,10 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Validated
 public class OrderRequestDto {
 
-    //@NotEmpty(message = "")
+    @NotEmpty(message = "Please provide customer ID")
     private String customerId;
+    @NotEmpty(message = "Please provide product items to order")
     private List<OrderProductDto> productList;
 }

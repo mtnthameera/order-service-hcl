@@ -76,7 +76,7 @@ public class OrderServiceImpl implements OrderService {
                 .build();
     }
 
-    private boolean isStocksAvailable(String productCode, Integer quantity) {
+    public boolean isStocksAvailable(String productCode, Integer quantity) {
         return consumer.getAvailableUnits(productCode).getBody() - quantity >= 0;
     }
 
