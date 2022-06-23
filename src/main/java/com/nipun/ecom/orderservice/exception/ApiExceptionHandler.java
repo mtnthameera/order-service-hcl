@@ -39,7 +39,7 @@ public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
         return ResponseEntity.badRequest()
                 .body(ApiException.builder()
                         .status(HttpStatus.BAD_REQUEST)
-                        .message(ex.getBindingResult().getFieldError().toString())
+                        .message(ex.getBindingResult().getFieldError().getDefaultMessage())
                         .build());
     }
 }
